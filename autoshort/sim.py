@@ -14,6 +14,7 @@ CX, CY = 540.0, 930.0
 FPS = 60
 SUBSTEPS = 8
 TAU = math.tau
+FORMATS = ("ring_escape", "ball_grow")
 
 
 @dataclass
@@ -33,6 +34,8 @@ class Params:
     vmax: float
     hue0: float
     hue_span: float
+    fmt: str = "ring_escape"
+    growth: float = 0.0  # ball_grow: radius added per bounce
 
     def to_dict(self) -> dict:
         return asdict(self)
@@ -45,13 +48,17 @@ class Sim:
     broken: list[int]  # rings destroyed so far, per frame
     events: list[dict]  # {t, kind: bounce|break, ring, x, y}
     finish_t: float
+    radius: list[float]  # ball radius per frame
+    bounces: list[int]  # bounce count per frame
 
     @property
     def duration(self) -> float:
         return len(self.frames) / FPS
 
 
-def make_params(seed: int, attempt: int = 0) -> Params:
+def make_params(seed: int, attempt: int = 0, fmt: str = "ring_escape") -> Params:
+    if fmt == "ball_grow":
+        return _make_params_grow(seed, attempt)
     # Look-and-feel depends on the seed only; retries change just the initial conditions.
     style = random.Random(seed)
     rng = random.Random(seed * 7919 + attempt + 1)
@@ -85,7 +92,97 @@ def make_params(seed: int, attempt: int = 0) -> Params:
     )
 
 
+def _make_params_grow(seed: int, attempt: int) -> Params:
+    style = random.Random(seed + 500_000)
+    rng = random.Random(seed * 7919 + attempt + 1)
+    a = rng.uniform(0, TAU)
+    return Params(
+        seed=seed,
+        attempt=attempt,
+        n_rings=1,
+        radii=[440.0],
+        gaps=[0.0],
+        omegas=[0.0],
+        phases=[0.0],
+        thickness=10.0,
+        gravity=style.choice([1400.0, 1800.0, 2200.0]),
+        ball_r=18.0,
+        v0=(500.0 * math.cos(a), 500.0 * math.sin(a)),
+        speedup=1.01,
+        vmax=1500.0,
+        hue0=style.random(),
+        hue_span=0.0,
+        fmt="ball_grow",
+        growth=style.uniform(5.0, 9.0),
+    )
+
+
+def _simulate_grow(p: Params, max_seconds: float, tail: float) -> Sim | None:
+    """One closed ring. The ball grows on every bounce until it fills the ring."""
+    dt = 1.0 / (FPS * SUBSTEPS)
+    wall = p.radii[0] - p.thickness / 2
+    x, y = 0.0, -20.0
+    vx, vy = p.v0
+    r = p.ball_r
+    nb = 0
+    events: list[dict] = []
+    frames, broken_f, radius_f, bounces_f = [], [], [], []
+    finish: float | None = None
+    step = 0
+    t = 0.0
+    min_inward = 260.0
+
+    while True:
+        if step % SUBSTEPS == 0:
+            frames.append((x, y))
+            broken_f.append(0 if finish is None else 1)
+            radius_f.append(r)
+            bounces_f.append(nb)
+            if finish is not None and t >= finish + tail:
+                break
+            if finish is None and t > max_seconds:
+                return None
+        t += dt
+        step += 1
+        if finish is not None:
+            continue
+        vy += p.gravity * dt
+        x += vx * dt
+        y += vy * dt
+        d = math.hypot(x, y)
+        if d + r < wall or d == 0:
+            continue
+        nx, ny = x / d, y / d
+        vn = vx * nx + vy * ny
+        if vn <= 0:
+            continue
+        vx = (vx - 2 * vn * nx) * p.speedup
+        vy = (vy - 2 * vn * ny) * p.speedup
+        inward = -(vx * nx + vy * ny)
+        if inward < min_inward:
+            vx -= nx * (min_inward - inward)
+            vy -= ny * (min_inward - inward)
+        speed = math.hypot(vx, vy)
+        if speed > p.vmax:
+            vx *= p.vmax / speed
+            vy *= p.vmax / speed
+        nb += 1
+        r += p.growth
+        if r >= wall - 1:
+            r, x, y = wall, 0.0, 0.0
+            finish = t
+            events.append({"t": t, "kind": "bounce", "ring": 0, "x": x, "y": y})
+            events.append({"t": t, "kind": "break", "ring": 0, "x": x, "y": y})
+        else:
+            x, y = nx * (wall - r), ny * (wall - r)
+            events.append({"t": t, "kind": "bounce", "ring": 0, "x": x, "y": y})
+
+    return Sim(p, frames, broken_f, events, finish, radius_f, bounces_f)
+
+
 def simulate(p: Params, max_seconds: float = 40.0, tail: float = 1.8) -> Sim | None:
+    if p.fmt == "ball_grow":
+        return _simulate_grow(p, max_seconds, tail)
     dt = 1.0 / (FPS * SUBSTEPS)
     x, y = 0.0, -20.0
     vx, vy = p.v0
@@ -93,6 +190,8 @@ def simulate(p: Params, max_seconds: float = 40.0, tail: float = 1.8) -> Sim | N
     events: list[dict] = []
     frames: list[tuple[float, float]] = []
     broken_f: list[int] = []
+    bounces_f: list[int] = []
+    nb = 0
     finish: float | None = None
     step = 0
     t = 0.0
@@ -102,6 +201,7 @@ def simulate(p: Params, max_seconds: float = 40.0, tail: float = 1.8) -> Sim | N
         if step % SUBSTEPS == 0:
             frames.append((x, y))
             broken_f.append(broken)
+            bounces_f.append(nb)
             if finish is not None and t >= finish + tail:
                 break
             if finish is None and t > max_seconds:
@@ -145,13 +245,18 @@ def simulate(p: Params, max_seconds: float = 40.0, tail: float = 1.8) -> Sim | N
             vx *= p.vmax / speed
             vy *= p.vmax / speed
         x, y = nx * (wall - p.ball_r), ny * (wall - p.ball_r)
+        nb += 1
         events.append({"t": t, "kind": "bounce", "ring": k, "x": x, "y": y})
 
-    return Sim(p, frames, broken_f, events, finish)
+    return Sim(p, frames, broken_f, events, finish, [p.ball_r] * len(frames), bounces_f)
 
 
 def quality_ok(sim: Sim) -> tuple[bool, str]:
     """Reject runs that would make a boring Short."""
+    if sim.params.fmt == "ball_grow":
+        if not 14.0 <= sim.finish_t <= 34.0:
+            return False, f"finish_t={sim.finish_t:.1f}s outside 14-34s"
+        return True, "ok"
     if not 16.0 <= sim.finish_t <= 34.0:
         return False, f"finish_t={sim.finish_t:.1f}s outside 16-34s"
     breaks = [e["t"] for e in sim.events if e["kind"] == "break"]
@@ -163,9 +268,9 @@ def quality_ok(sim: Sim) -> tuple[bool, str]:
     return True, "ok"
 
 
-def find_good_sim(seed: int, max_attempts: int = 200) -> Sim:
+def find_good_sim(seed: int, fmt: str = "ring_escape", max_attempts: int = 200) -> Sim:
     for attempt in range(max_attempts):
-        sim = simulate(make_params(seed, attempt))
+        sim = simulate(make_params(seed, attempt, fmt))
         if sim is not None and quality_ok(sim)[0]:
             return sim
-    raise RuntimeError(f"seed {seed}: no acceptable run in {max_attempts} attempts")
+    raise RuntimeError(f"{fmt} seed {seed}: no acceptable run in {max_attempts} attempts")

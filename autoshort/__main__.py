@@ -9,43 +9,62 @@ from pathlib import Path
 
 from .audio import build_audio
 from .render import render_video
-from .sim import find_good_sim
+from .sim import FORMATS, find_good_sim
 
-HOOKS = [
+HOOKS = {"ring_escape": [
     "CAN IT ESCAPE {n} RINGS?",
     "{n} RINGS. ONE BALL.",
     "HOW FAST CAN IT BREAK OUT?",
     "WAIT FOR THE LAST RING...",
     "GUESS THE ESCAPE TIME",
-]
-TITLES = [
+], "ball_grow": [
+    "IT GROWS EVERY BOUNCE",
+    "HOW MANY BOUNCES TO FILL IT?",
+    "GUESS THE FINAL COUNT",
+    "BIGGER EVERY BOUNCE...",
+]}
+TITLES = {"ring_escape": [
     "Can the ball escape {n} spinning rings?",
     "{n} rings vs 1 ball - how long does it take?",
     "Guess how long until it escapes ({n} rings)",
     "The last ring is the hardest... ({n} rings)",
-]
+], "ball_grow": [
+    "The ball grows every bounce - guess the final count",
+    "How many bounces until it fills the circle?",
+    "Bigger every bounce... until there is no room left",
+]}
+BLURBS = {
+    "ring_escape": "Every bounce plays a note. Every gap it finds destroys a ring.",
+    "ball_grow": "Every bounce plays a note and makes the ball bigger. It ends when there is no room left.",
+}
 
 
-def make(seed: int, out_dir: Path) -> Path:
+def format_for(seed: int) -> str:
+    """Formats alternate by seed so each gets equal exposure for comparison."""
+    return FORMATS[seed % len(FORMATS)]
+
+
+def make(seed: int, out_dir: Path, fmt: str | None = None) -> Path:
     out_dir.mkdir(parents=True, exist_ok=True)
     t0 = time.time()
-    sim = find_good_sim(seed)
+    fmt = fmt or format_for(seed)
+    sim = find_good_sim(seed, fmt)
     p = sim.params
     rng = random.Random(seed)
-    hook = rng.choice(HOOKS).format(n=p.n_rings)
-    title = rng.choice(TITLES).format(n=p.n_rings)
+    hook = rng.choice(HOOKS[fmt]).format(n=p.n_rings)
+    title = rng.choice(TITLES[fmt]).format(n=p.n_rings)
 
-    base = out_dir / f"ring_escape_{seed:05d}"
+    base = out_dir / f"{fmt}_{seed:05d}"
     wav, mp4 = base.with_suffix(".wav"), base.with_suffix(".mp4")
     build_audio(sim, wav)
     render_video(sim, wav, mp4, hook)
     wav.unlink()
 
     meta = {
-        "format": "ring_escape",
+        "format": fmt,
         "seed": seed,
         "title": f"{title} #shorts",
-        "description": "Every bounce plays a note. Every gap it finds destroys a ring.\n"
+        "description": BLURBS[fmt] + "\n"
         "A new simulation every day.\n\n#shorts #satisfying #simulation #bouncingball #physics",
         "tags": ["satisfying", "simulation", "bouncing ball", "physics", "asmr", "shorts"],
         "hook": hook,
@@ -56,7 +75,7 @@ def make(seed: int, out_dir: Path) -> Path:
         "uploaded": None,
     }
     base.with_suffix(".json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
-    print(f"{mp4}  {sim.duration:.1f}s  rings={p.n_rings}  (rendered in {time.time() - t0:.0f}s)")
+    print(f"{mp4}  {sim.duration:.1f}s  (rendered in {time.time() - t0:.0f}s)")
     return mp4
 
 
@@ -66,6 +85,7 @@ def main() -> None:
 
     m = sub.add_parser("make", help="render one video")
     m.add_argument("--seed", type=int, required=True)
+    m.add_argument("--format", choices=FORMATS, help="default: alternates by seed")
     m.add_argument("--out", type=Path, default=Path("out"))
 
     b = sub.add_parser("batch", help="render several videos")
@@ -85,7 +105,7 @@ def main() -> None:
 
     a = ap.parse_args()
     if a.cmd == "make":
-        make(a.seed, a.out)
+        make(a.seed, a.out, a.format)
     elif a.cmd == "batch":
         for s in range(a.start_seed, a.start_seed + a.count):
             make(s, a.out)

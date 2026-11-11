@@ -47,3 +47,9 @@ def test_taken_slots_come_from_uploaded_metadata(tmp_path):
     _meta(tmp_path, 2, None)
     _meta(tmp_path, 3, uploaded=False)
     assert taken_slots(tmp_path) == {at(12, 15)}
+
+
+def test_formats_alternate_by_seed():
+    from autoshort.__main__ import format_for
+
+    assert [format_for(s) for s in (4, 5, 6, 7)] == ["ring_escape", "ball_grow"] * 2

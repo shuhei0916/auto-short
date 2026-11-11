@@ -34,7 +34,7 @@ def _lerp(a, b, f):
 
 
 def ring_color(p, k: int) -> tuple[int, int, int]:
-    h = (p.hue0 + p.hue_span * k / (p.n_rings - 1)) % 1.0
+    h = (p.hue0 + p.hue_span * k / max(1, p.n_rings - 1)) % 1.0
     r, g, b = colorsys.hsv_to_rgb(h, 0.75, 1.0)
     return int(r * 255), int(g * 255), int(b * 255)
 
@@ -118,20 +118,31 @@ def render_video(sim: Sim, audio: Path, out: Path, hook: str) -> None:
                     py = q["y"] + q["vy"] * age + 0.5 * 900 * age * age
                     circle(d, px, py, q["size"] * f, _lerp(bg, q["color"], f))
 
-            tint = colors[min(broken, p.n_rings - 1)]
+            grow = p.fmt == "ball_grow"
+            ball_r = sim.radius[i]
+            if grow:  # hue drifts with every bounce
+                h = (p.hue0 + 0.017 * sim.bounces[i]) % 1.0
+                tint = tuple(int(c * 255) for c in colorsys.hsv_to_rgb(h, 0.75, 1.0))
+            else:
+                tint = colors[min(broken, p.n_rings - 1)]
             lo = max(0, i - TRAIL)
             for j in range(lo, i):
                 f = (j - lo + 1) / (i - lo + 1)
                 tx, ty = sim.frames[j]
-                circle(d, tx, ty, p.ball_r * (0.35 + 0.6 * f), _lerp(bg, tint, 0.55 * f))
-            circle(d, bx, by, p.ball_r, tint)
-            circle(d, bx, by, p.ball_r * 0.72, (255, 255, 255))
+                circle(d, tx, ty, sim.radius[j] * (0.35 + 0.6 * f), _lerp(bg, tint, 0.55 * f))
+            circle(d, bx, by, ball_r, tint)
+            circle(d, bx, by, max(ball_r * 0.72, ball_r - 14), (255, 255, 255))
 
             frame = img.reduce(SS)
             d = ImageDraw.Draw(frame)
             kw = dict(anchor="mm", stroke_width=5, stroke_fill=(0, 0, 0))
             d.text((W / 2, 290), hook, font=f_hook, fill=(255, 255, 255), **kw)
-            if t < sim.finish_t:
+            if grow:
+                done = t >= sim.finish_t
+                label = "FILLED IN" if done else "BOUNCES"
+                d.text((W / 2, 1500), label, font=f_label, fill=(200, 200, 210), **kw)
+                d.text((W / 2, 1610), str(sim.bounces[i]), font=f_big, fill=(255, 255, 255) if done else tint, **kw)
+            elif t < sim.finish_t:
                 left = p.n_rings - broken
                 d.text((W / 2, 1500), "RINGS LEFT", font=f_label, fill=(200, 200, 210), **kw)
                 d.text((W / 2, 1610), str(left), font=f_big, fill=tint, **kw)
