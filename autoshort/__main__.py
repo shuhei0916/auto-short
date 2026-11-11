@@ -78,12 +78,31 @@ def main() -> None:
     u.add_argument("--privacy", choices=["private", "unlisted", "public"], default="private")
     u.add_argument("--publish-at", help="RFC3339 time, e.g. 2026-11-20T12:00:00Z (forces private until then)")
 
+    d = sub.add_parser("daily", help="render the next videos and schedule them on YouTube")
+    d.add_argument("--count", type=int, default=2)
+    d.add_argument("--out", type=Path, default=Path("out"))
+    d.add_argument("--no-upload", action="store_true")
+
     a = ap.parse_args()
     if a.cmd == "make":
         make(a.seed, a.out)
     elif a.cmd == "batch":
         for s in range(a.start_seed, a.start_seed + a.count):
             make(s, a.out)
+    elif a.cmd == "daily":
+        from datetime import datetime, timezone
+
+        from .schedule import next_seed, next_slots, taken_slots, to_rfc3339
+
+        a.out.mkdir(parents=True, exist_ok=True)
+        seed = next_seed(a.out)
+        slots = next_slots(datetime.now(timezone.utc), a.count, taken=taken_slots(a.out))
+        for i, slot in enumerate(slots):
+            video = make(seed + i, a.out)
+            if not a.no_upload:
+                from .upload import upload
+
+                upload(video, publish_at=to_rfc3339(slot))
     elif a.cmd == "upload":
         from .upload import upload
 
