@@ -2,7 +2,7 @@
   "generated": "2026-11-12",
   "channel": {
     "subscribers": 1,
-    "views": 0
+    "views": 2748
   },
   "videos": [
     {
@@ -12,7 +12,7 @@
       "title": "7 rings vs 1 ball - how long does it take? #shorts",
       "published": "2026-11-11T17:11:28.849414+00:00",
       "url": "https://youtube.com/shorts/m9UtMb3wkXQ",
-      "views": 1306,
+      "views": 1442,
       "likes": 7,
       "comments": 0,
       "avg_view_pct": null,
@@ -26,7 +26,7 @@
       "title": "Guess how long until it escapes (7 rings) #shorts",
       "published": "2026-11-11T23:00:00Z",
       "url": "https://youtube.com/shorts/OE9R8hx8OAY",
-      "views": 843,
+      "views": 1381,
       "likes": 7,
       "comments": 0,
       "avg_view_pct": null,
@@ -40,8 +40,8 @@
       "title": "Bigger every bounce... until there is no room left #shorts",
       "published": "2026-11-12T15:00:00Z",
       "url": "https://youtube.com/shorts/LNpBK0HksDk",
-      "views": 1,
-      "likes": 0,
+      "views": 63,
+      "likes": 1,
       "comments": 0,
       "avg_view_pct": null,
       "avg_view_s": null,
@@ -74,18 +74,52 @@
       "avg_view_pct": null,
       "avg_view_s": null,
       "subs_gained": null
+    },
+    {
+      "id": "SZfMVxX45Nw",
+      "seed": 8,
+      "format": "plinko",
+      "title": "110 balls, one peg board - which slot wins? #shorts",
+      "published": "2026-11-13T23:00:00Z",
+      "url": "https://youtube.com/shorts/SZfMVxX45Nw",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "avg_view_pct": null,
+      "avg_view_s": null,
+      "subs_gained": null
+    },
+    {
+      "id": "uoyo1h6Tlr8",
+      "seed": 9,
+      "format": "ring_escape",
+      "title": "Guess how long until it escapes (9 rings) #shorts",
+      "published": "2026-11-14T15:00:00Z",
+      "url": "https://youtube.com/shorts/uoyo1h6Tlr8",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "avg_view_pct": null,
+      "avg_view_s": null,
+      "subs_gained": null
     }
   ],
   "by_format": {
     "ring_escape": {
-      "videos": 3,
-      "views": 2149,
+      "videos": 4,
+      "views": 2823,
       "avg_view_pct": null,
       "subs_gained": 0
     },
     "ball_grow": {
       "videos": 2,
-      "views": 1,
+      "views": 63,
+      "avg_view_pct": null,
+      "subs_gained": 0
+    },
+    "plinko": {
+      "videos": 1,
+      "views": 0,
       "avg_view_pct": null,
       "subs_gained": 0
     }

@@ -1,0 +1,87 @@
+{
+  "format": "ring_escape",
+  "seed": 9,
+  "title": "Guess how long until it escapes (9 rings) #shorts",
+  "description": "Every bounce plays a note. Every gap it finds destroys a ring.\nA new simulation every day.\n\n#shorts #satisfying #simulation #bouncingball #physics",
+  "tags": [
+    "satisfying",
+    "simulation",
+    "bouncing ball",
+    "physics",
+    "asmr",
+    "shorts"
+  ],
+  "hook": "WAIT FOR THE LAST RING...",
+  "duration": 25.03,
+  "finish_t": 23.21,
+  "bounces": 50,
+  "params": {
+    "seed": 9,
+    "attempt": 0,
+    "n_rings": 9,
+    "radii": [
+      120.0,
+      166.25,
+      212.5,
+      258.75,
+      305.0,
+      351.25,
+      397.5,
+      443.75,
+      490.0
+    ],
+    "gaps": [
+      0.94709078268748,
+      0.8588503314582862,
+      0.7978813309963835,
+      0.7521108887345809,
+      0.715906049016929,
+      0.6862163854560595,
+      0.6612182683496297,
+      0.6397414258718317,
+      0.6209936506872336
+    ],
+    "omegas": [
+      0.9682735888135603,
+      -0.6533223432316728,
+      0.8350689354953617,
+      -0.979894352851934,
+      0.6805577992188989,
+      -0.8539223557707356,
+      0.876763784247157,
+      -0.6659407665058915,
+      0.7897510288216415
+    ],
+    "phases": [
+      1.8494474076272784,
+      3.743307585443801,
+      3.959086367737381,
+      2.9928185588841645,
+      1.3673780693895525,
+      3.667931397823954,
+      2.8509556135511414,
+      4.12335004580309,
+      1.4505188313085802
+    ],
+    "thickness": 9.0,
+    "gravity": 2200.0,
+    "ball_r": 16.0,
+    "v0": [
+      -189.29396647707804,
+      -462.7826641690188
+    ],
+    "speedup": 1.012,
+    "vmax": 1500.0,
+    "hue0": 0.9462154392303594,
+    "hue_span": -0.3,
+    "fmt": "ring_escape",
+    "growth": 0.0
+  },
+  "uploaded": {
+    "id": "uoyo1h6Tlr8",
+    "url": "https://youtube.com/shorts/uoyo1h6Tlr8",
+    "at": "2026-11-12T19:25:23.130510+00:00",
+    "privacy": "private",
+    "publish_at": "2026-11-14T15:00:00Z"
+  }
+}
