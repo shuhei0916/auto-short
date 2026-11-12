@@ -23,6 +23,11 @@ HOOKS = {"ring_escape": [
     "HOW MANY BOUNCES TO FILL IT?",
     "GUESS THE FINAL COUNT",
     "BIGGER EVERY BOUNCE...",
+], "plinko": [
+    "WHERE WILL {n} BALLS LAND?",
+    "{n} BALLS. WATCH THE PILE.",
+    "GUESS THE SHAPE",
+    "WHICH SLOT WINS?",
 ]}
 TITLES = {"ring_escape": [
     "Can the ball escape {n} spinning rings?",
@@ -33,10 +38,15 @@ TITLES = {"ring_escape": [
     "The ball grows every bounce - guess the final count",
     "How many bounces until it fills the circle?",
     "Bigger every bounce... until there is no room left",
+], "plinko": [
+    "Where will {n} balls land? Guess the shape",
+    "{n} balls, one peg board - which slot wins?",
+    "Watch the pile grow into a bell curve",
 ]}
 BLURBS = {
     "ring_escape": "Every bounce plays a note. Every gap it finds destroys a ring.",
     "ball_grow": "Every bounce plays a note and makes the ball bigger. It ends when there is no room left.",
+    "plinko": "Balls fall through a field of pegs and pile up. Which slot wins? It always ends as a bell curve.",
 }
 
 

@@ -14,7 +14,7 @@ CX, CY = 540.0, 930.0
 FPS = 60
 SUBSTEPS = 8
 TAU = math.tau
-FORMATS = ("ring_escape", "ball_grow")
+FORMATS = ("ring_escape", "ball_grow", "plinko")
 
 
 @dataclass
@@ -56,7 +56,11 @@ class Sim:
         return len(self.frames) / FPS
 
 
-def make_params(seed: int, attempt: int = 0, fmt: str = "ring_escape") -> Params:
+def make_params(seed: int, attempt: int = 0, fmt: str = "ring_escape"):
+    if fmt == "plinko":
+        from .plinko import make_params as plinko_params
+
+        return plinko_params(seed, attempt)
     if fmt == "ball_grow":
         return _make_params_grow(seed, attempt)
     # Look-and-feel depends on the seed only; retries change just the initial conditions.
@@ -180,7 +184,11 @@ def _simulate_grow(p: Params, max_seconds: float, tail: float) -> Sim | None:
     return Sim(p, frames, broken_f, events, finish, radius_f, bounces_f)
 
 
-def simulate(p: Params, max_seconds: float = 40.0, tail: float = 1.8) -> Sim | None:
+def simulate(p, max_seconds: float = 40.0, tail: float = 1.8):
+    if p.fmt == "plinko":
+        from .plinko import simulate as plinko_simulate
+
+        return plinko_simulate(p)
     if p.fmt == "ball_grow":
         return _simulate_grow(p, max_seconds, tail)
     dt = 1.0 / (FPS * SUBSTEPS)
@@ -251,8 +259,12 @@ def simulate(p: Params, max_seconds: float = 40.0, tail: float = 1.8) -> Sim | N
     return Sim(p, frames, broken_f, events, finish, [p.ball_r] * len(frames), bounces_f)
 
 
-def quality_ok(sim: Sim) -> tuple[bool, str]:
+def quality_ok(sim) -> tuple[bool, str]:
     """Reject runs that would make a boring Short."""
+    if sim.params.fmt == "plinko":
+        from .plinko import quality_ok as plinko_ok
+
+        return plinko_ok(sim)
     if sim.params.fmt == "ball_grow":
         if not 14.0 <= sim.finish_t <= 34.0:
             return False, f"finish_t={sim.finish_t:.1f}s outside 14-34s"
@@ -268,7 +280,7 @@ def quality_ok(sim: Sim) -> tuple[bool, str]:
     return True, "ok"
 
 
-def find_good_sim(seed: int, fmt: str = "ring_escape", max_attempts: int = 200) -> Sim:
+def find_good_sim(seed: int, fmt: str = "ring_escape", max_attempts: int = 200):
     for attempt in range(max_attempts):
         sim = simulate(make_params(seed, attempt, fmt))
         if sim is not None and quality_ok(sim)[0]:
