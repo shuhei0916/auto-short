@@ -10,7 +10,7 @@ on:
     inputs:
       count:
         description: "Number of videos"
-        default: "1"
+        default: "2"
 
 concurrency:
   group: daily
@@ -34,7 +34,7 @@ jobs:
       - name: Render and schedule
         env:
           YT_TOKEN_JSON: ${{ secrets.YT_TOKEN_JSON }}
-        run: python -m autoshort daily --count "${{ inputs.count || '1' }}"
+        run: python -m autoshort daily --count "${{ inputs.count || '2' }}"
       - name: Collect analytics
         if: always()
         continue-on-error: true
