@@ -67,7 +67,11 @@ def _particles(sim: Sim) -> list[dict]:
     return out
 
 
-def render_video(sim: Sim, audio: Path, out: Path, hook: str) -> None:
+def render_video(sim, audio: Path, out: Path, hook: str) -> None:
+    if sim.params.fmt == "plinko":
+        from .render_plinko import render_plinko
+
+        return render_plinko(sim, audio, out, hook)
     p = sim.params
     colors = [ring_color(p, k) for k in range(p.n_rings)]
     particles = _particles(sim)
