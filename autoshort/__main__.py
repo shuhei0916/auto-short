@@ -105,6 +105,8 @@ def main() -> None:
     d.add_argument("--out", type=Path, default=Path("out"))
     d.add_argument("--no-upload", action="store_true")
 
+    sub.add_parser("analytics", help="write analytics/latest.json from YouTube stats")
+
     a = ap.parse_args()
     if a.cmd == "make":
         make(a.seed, a.out, a.format)
@@ -124,6 +126,10 @@ def main() -> None:
                 from .upload import upload
 
                 upload(video, publish_at=to_rfc3339(slot))
+    elif a.cmd == "analytics":
+        from .analytics import collect
+
+        collect()
     elif a.cmd == "upload":
         from .upload import upload
 

@@ -1,0 +1,93 @@
+{
+  "generated": "2026-11-12",
+  "channel": {
+    "subscribers": 1,
+    "views": 0
+  },
+  "videos": [
+    {
+      "id": "m9UtMb3wkXQ",
+      "seed": 3,
+      "format": "ring_escape",
+      "title": "7 rings vs 1 ball - how long does it take? #shorts",
+      "published": "2026-11-11T17:11:28.849414+00:00",
+      "url": "https://youtube.com/shorts/m9UtMb3wkXQ",
+      "views": 1306,
+      "likes": 7,
+      "comments": 0,
+      "avg_view_pct": null,
+      "avg_view_s": null,
+      "subs_gained": null
+    },
+    {
+      "id": "OE9R8hx8OAY",
+      "seed": 4,
+      "format": "ring_escape",
+      "title": "Guess how long until it escapes (7 rings) #shorts",
+      "published": "2026-11-11T23:00:00Z",
+      "url": "https://youtube.com/shorts/OE9R8hx8OAY",
+      "views": 843,
+      "likes": 7,
+      "comments": 0,
+      "avg_view_pct": null,
+      "avg_view_s": null,
+      "subs_gained": null
+    },
+    {
+      "id": "LNpBK0HksDk",
+      "seed": 5,
+      "format": "ball_grow",
+      "title": "Bigger every bounce... until there is no room left #shorts",
+      "published": "2026-11-12T15:00:00Z",
+      "url": "https://youtube.com/shorts/LNpBK0HksDk",
+      "views": 1,
+      "likes": 0,
+      "comments": 0,
+      "avg_view_pct": null,
+      "avg_view_s": null,
+      "subs_gained": null
+    },
+    {
+      "id": "17BMFcu3VIE",
+      "seed": 6,
+      "format": "ring_escape",
+      "title": "Can the ball escape 10 spinning rings? #shorts",
+      "published": "2026-11-12T23:00:00Z",
+      "url": "https://youtube.com/shorts/17BMFcu3VIE",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "avg_view_pct": null,
+      "avg_view_s": null,
+      "subs_gained": null
+    },
+    {
+      "id": "9ZQ1Qkmk5dY",
+      "seed": 7,
+      "format": "ball_grow",
+      "title": "The ball grows every bounce - guess the final count #shorts",
+      "published": "2026-11-13T15:00:00Z",
+      "url": "https://youtube.com/shorts/9ZQ1Qkmk5dY",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "avg_view_pct": null,
+      "avg_view_s": null,
+      "subs_gained": null
+    }
+  ],
+  "by_format": {
+    "ring_escape": {
+      "videos": 3,
+      "views": 2149,
+      "avg_view_pct": null,
+      "subs_gained": 0
+    },
+    "ball_grow": {
+      "videos": 2,
+      "views": 1,
+      "avg_view_pct": null,
+      "subs_gained": 0
+    }
+  }
+}

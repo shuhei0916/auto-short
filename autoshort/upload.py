@@ -32,10 +32,9 @@ def _load_credentials():
     return creds, token
 
 
-def _service():
+def _credentials():
     from google.auth.transport.requests import Request
     from google_auth_oauthlib.flow import InstalledAppFlow
-    from googleapiclient.discovery import build
 
     creds, token = _load_credentials()
     client = SECRETS / "client_secret.json"
@@ -50,7 +49,19 @@ def _service():
             creds = InstalledAppFlow.from_client_secrets_file(str(client), SCOPES).run_local_server(port=0)
         if token is not None:
             token.write_text(creds.to_json(), encoding="utf-8")
-    return build("youtube", "v3", credentials=creds)
+    return creds
+
+
+def _service():
+    from googleapiclient.discovery import build
+
+    return build("youtube", "v3", credentials=_credentials())
+
+
+def _analytics_service():
+    from googleapiclient.discovery import build
+
+    return build("youtubeAnalytics", "v2", credentials=_credentials())
 
 
 def upload(video: Path, privacy: str = "private", publish_at: str | None = None) -> str:
