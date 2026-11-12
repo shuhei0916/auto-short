@@ -1,0 +1,77 @@
+{
+  "format": "ring_escape",
+  "seed": 4,
+  "title": "Guess how long until it escapes (7 rings) #shorts",
+  "description": "Every bounce plays a note. Every gap it finds destroys a ring.\nA new simulation every day.\n\n#shorts #satisfying #simulation #bouncingball #physics",
+  "tags": [
+    "satisfying",
+    "simulation",
+    "bouncing ball",
+    "physics",
+    "asmr",
+    "shorts"
+  ],
+  "hook": "7 RINGS. ONE BALL.",
+  "duration": 25.15,
+  "finish_t": 23.32,
+  "bounces": 58,
+  "params": {
+    "seed": 4,
+    "attempt": 0,
+    "n_rings": 7,
+    "radii": [
+      120.0,
+      181.66666666666666,
+      243.33333333333331,
+      305.0,
+      366.66666666666663,
+      428.3333333333333,
+      490.0
+    ],
+    "gaps": [
+      0.8389094646445174,
+      0.7407759834317993,
+      0.6785923921488332,
+      0.6341317762721194,
+      0.6000508273006259,
+      0.5727101843191916,
+      0.5500607339535015
+    ],
+    "omegas": [
+      -1.0236580361208651,
+      0.9768077472107477,
+      -1.1542767154551359,
+      1.427762771156513,
+      -1.3655288705017175,
+      1.3468380753969817,
+      -1.0591204334208166
+    ],
+    "phases": [
+      4.208994897005212,
+      2.0436688245577774,
+      2.257687074851245,
+      5.972458621929635,
+      5.325708704902073,
+      1.1626954846454145,
+      1.1191860979874195
+    ],
+    "thickness": 9.0,
+    "gravity": 2200.0,
+    "ball_r": 16.0,
+    "v0": [
+      -499.99995814128096,
+      0.2045940304097529
+    ],
+    "speedup": 1.012,
+    "vmax": 1500.0,
+    "hue0": 0.36024490950020127,
+    "hue_span": 0.4
+  },
+  "uploaded": {
+    "id": "OE9R8hx8OAY",
+    "url": "https://youtube.com/shorts/OE9R8hx8OAY",
+    "at": "2026-11-11T17:23:55.480102+00:00",
+    "privacy": "private",
+    "publish_at": "2026-11-11T23:00:00Z"
+  }
+}

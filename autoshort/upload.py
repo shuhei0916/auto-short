@@ -1,12 +1,14 @@
 """YouTube upload via Data API v3.
 
-Needs secrets/client_secret.json (OAuth client, type "Desktop app").
-The first run opens a browser for consent and caches secrets/token.json.
+Locally: needs secrets/client_secret.json (OAuth client, type "Desktop app");
+the first run opens a browser for consent and caches secrets/token.json.
+In CI: set YT_TOKEN_JSON to the contents of that token.json.
 """
 from __future__ import annotations
 
 import datetime as dt
 import json
+import os
 from pathlib import Path
 
 # Read-only scopes are requested up front so the analytics loop needs no second consent.
@@ -18,30 +20,45 @@ SCOPES = [
 SECRETS = Path("secrets")
 
 
+def _load_credentials():
+    """Returns (credentials or None, token file to cache refreshed tokens in, or None)."""
+    from google.oauth2.credentials import Credentials
+
+    env = os.environ.get("YT_TOKEN_JSON")
+    if env:
+        return Credentials.from_authorized_user_info(json.loads(env), SCOPES), None
+    token = SECRETS / "token.json"
+    creds = Credentials.from_authorized_user_file(str(token), SCOPES) if token.exists() else None
+    return creds, token
+
+
 def _service():
     from google.auth.transport.requests import Request
-    from google.oauth2.credentials import Credentials
     from google_auth_oauthlib.flow import InstalledAppFlow
     from googleapiclient.discovery import build
 
-    token = SECRETS / "token.json"
+    creds, token = _load_credentials()
     client = SECRETS / "client_secret.json"
-    creds = Credentials.from_authorized_user_file(str(token), SCOPES) if token.exists() else None
     if not creds or not creds.valid:
         if creds and creds.expired and creds.refresh_token:
             creds.refresh(Request())
+        elif token is None:
+            raise SystemExit("YT_TOKEN_JSON holds no usable refresh token.")
         else:
             if not client.exists():
                 raise SystemExit(f"Missing {client}. See README (YouTube setup).")
             creds = InstalledAppFlow.from_client_secrets_file(str(client), SCOPES).run_local_server(port=0)
-        token.write_text(creds.to_json(), encoding="utf-8")
+        if token is not None:
+            token.write_text(creds.to_json(), encoding="utf-8")
     return build("youtube", "v3", credentials=creds)
 
 
 def upload(video: Path, privacy: str = "private", publish_at: str | None = None) -> str:
     from googleapiclient.http import MediaFileUpload
 
-    meta_path = video.with_suffix(".json")
+    from .schedule import meta_path_for
+
+    meta_path = meta_path_for(video)
     meta = json.loads(meta_path.read_text(encoding="utf-8"))
     if meta.get("uploaded"):
         raise SystemExit(f"Already uploaded: {meta['uploaded']['url']}")

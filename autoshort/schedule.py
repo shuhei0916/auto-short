@@ -1,4 +1,7 @@
-"""Picks seeds and publish slots for the daily run. State lives in out/*.json."""
+"""Picks seeds and publish slots for the daily run.
+
+State lives in history/*.json, which is committed so CI runs share it.
+"""
 from __future__ import annotations
 
 import json
@@ -8,6 +11,11 @@ from pathlib import Path
 # 15:00 and 23:00 UTC = US morning and US evening.
 DEFAULT_HOURS = (15, 23)
 MARGIN = timedelta(hours=1)
+HISTORY_DIR = Path("history")
+
+
+def meta_path_for(video: Path, history: Path = HISTORY_DIR) -> Path:
+    return history / f"{video.stem}.json"
 
 
 def _metas(out_dir: Path) -> list[dict]:

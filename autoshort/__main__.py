@@ -9,6 +9,7 @@ from pathlib import Path
 
 from .audio import build_audio
 from .render import render_video
+from .schedule import HISTORY_DIR, meta_path_for
 from .sim import FORMATS, find_good_sim
 
 HOOKS = {"ring_escape": [
@@ -44,8 +45,9 @@ def format_for(seed: int) -> str:
     return FORMATS[seed % len(FORMATS)]
 
 
-def make(seed: int, out_dir: Path, fmt: str | None = None) -> Path:
+def make(seed: int, out_dir: Path, fmt: str | None = None, history: Path = HISTORY_DIR) -> Path:
     out_dir.mkdir(parents=True, exist_ok=True)
+    history.mkdir(parents=True, exist_ok=True)
     t0 = time.time()
     fmt = fmt or format_for(seed)
     sim = find_good_sim(seed, fmt)
@@ -74,7 +76,7 @@ def make(seed: int, out_dir: Path, fmt: str | None = None) -> Path:
         "params": p.to_dict(),
         "uploaded": None,
     }
-    base.with_suffix(".json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
+    meta_path_for(mp4, history).write_text(json.dumps(meta, indent=2), encoding="utf-8")
     print(f"{mp4}  {sim.duration:.1f}s  (rendered in {time.time() - t0:.0f}s)")
     return mp4
 
@@ -114,9 +116,8 @@ def main() -> None:
 
         from .schedule import next_seed, next_slots, taken_slots, to_rfc3339
 
-        a.out.mkdir(parents=True, exist_ok=True)
-        seed = next_seed(a.out)
-        slots = next_slots(datetime.now(timezone.utc), a.count, taken=taken_slots(a.out))
+        seed = next_seed(HISTORY_DIR)
+        slots = next_slots(datetime.now(timezone.utc), a.count, taken=taken_slots(HISTORY_DIR))
         for i, slot in enumerate(slots):
             video = make(seed + i, a.out)
             if not a.no_upload:

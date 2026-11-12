@@ -1,0 +1,77 @@
+{
+  "format": "ring_escape",
+  "seed": 3,
+  "title": "7 rings vs 1 ball - how long does it take? #shorts",
+  "description": "Every bounce plays a note. Every gap it finds destroys a ring.\nA new simulation every day.\n\n#shorts #satisfying #simulation #bouncingball #physics",
+  "tags": [
+    "satisfying",
+    "simulation",
+    "bouncing ball",
+    "physics",
+    "asmr",
+    "shorts"
+  ],
+  "hook": "7 RINGS. ONE BALL.",
+  "duration": 25.57,
+  "finish_t": 23.74,
+  "bounces": 61,
+  "params": {
+    "seed": 3,
+    "attempt": 2,
+    "n_rings": 7,
+    "radii": [
+      120.0,
+      181.66666666666666,
+      243.33333333333331,
+      305.0,
+      366.66666666666663,
+      428.3333333333333,
+      490.0
+    ],
+    "gaps": [
+      0.9399089892868483,
+      0.8299608422827728,
+      0.760290730195331,
+      0.7104773304270251,
+      0.6722932454312659,
+      0.6416609576884859,
+      0.6162846532142727
+    ],
+    "omegas": [
+      -0.7617940205901124,
+      0.5842401060259182,
+      -0.5676442134741757,
+      0.8289082630164117,
+      -0.6456734166238968,
+      0.6377423046707498,
+      -0.8790424170901185
+    ],
+    "phases": [
+      0.11356100475418235,
+      4.439633023273026,
+      1.7250634413623003,
+      0.6142093619918707,
+      3.371694047066176,
+      1.469310791031952,
+      5.083485556159073
+    ],
+    "thickness": 9.0,
+    "gravity": 1800.0,
+    "ball_r": 16.0,
+    "v0": [
+      244.89773239041406,
+      435.9186858463779
+    ],
+    "speedup": 1.012,
+    "vmax": 1500.0,
+    "hue0": 0.5409738856290388,
+    "hue_span": -0.3
+  },
+  "uploaded": {
+    "id": "m9UtMb3wkXQ",
+    "url": "https://youtube.com/shorts/m9UtMb3wkXQ",
+    "at": "2026-11-11T17:11:28.849414+00:00",
+    "privacy": "private",
+    "publish_at": null
+  }
+}

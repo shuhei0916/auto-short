@@ -16,6 +16,7 @@ SS = 2  # supersampling factor
 BG = (10, 10, 18)
 TRAIL = 28
 FONT_CANDIDATES = [
+    str(Path(__file__).resolve().parent.parent / "assets/fonts/Anton-Regular.ttf"),
     "C:/Windows/Fonts/impact.ttf",
     "C:/Windows/Fonts/arialbd.ttf",
     "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
@@ -71,7 +72,11 @@ def render_video(sim: Sim, audio: Path, out: Path, hook: str) -> None:
     colors = [ring_color(p, k) for k in range(p.n_rings)]
     particles = _particles(sim)
     breaks = [e for e in sim.events if e["kind"] == "break"]
-    f_hook, f_label, f_big = _font(84), _font(54), _font(150)
+    f_label, f_big = _font(54), _font(150)
+    size = 84
+    while size > 40 and _font(size).getlength(hook) > 880:  # keep clear of the Shorts UI
+        size -= 4
+    f_hook = _font(size)
 
     log = open(out.with_suffix(".ffmpeg.log"), "wb")
     proc = subprocess.Popen(

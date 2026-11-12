@@ -1,0 +1,43 @@
+name: ci
+
+# Tests on every push / PR. On PRs it also renders one sample per format so
+# a reviewer can watch the result before merging (Actions run -> Artifacts).
+on:
+  push:
+    branches: [main]
+    paths-ignore: ["history/**"]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt -r requirements-dev.txt
+      - run: python -m pytest -q
+
+  preview:
+    if: github.event_name == 'pull_request'
+    needs: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Render one sample per format
+        run: |
+          for f in $(python -c "from autoshort.sim import FORMATS; print(' '.join(FORMATS))"); do
+            python -m autoshort make --seed 90001 --format "$f" --out preview
+          done
+      - uses: actions/upload-artifact@v4
+        with:
+          name: preview
+          path: preview/*.mp4
