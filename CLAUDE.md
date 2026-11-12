@@ -29,7 +29,11 @@ non-verbal audience: on-screen text and titles are English.
 
 ## Commands
 
+Use a virtualenv; the cloud sandbox's system Pillow/cryptography break the tests.
+
 ```
+python -m venv .venv && . .venv/bin/activate
+pip install -r requirements.txt -r requirements-dev.txt
 python -m pytest -q
 python -m autoshort make --seed 90001 --format <name> --out preview
 ```
