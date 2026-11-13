@@ -1,8 +1,8 @@
 {
-  "generated": "2026-11-12",
+  "generated": "2026-11-13",
   "channel": {
-    "subscribers": 1,
-    "views": 2748
+    "subscribers": 7,
+    "views": 4950
   },
   "videos": [
     {
@@ -12,8 +12,8 @@
       "title": "7 rings vs 1 ball - how long does it take? #shorts",
       "published": "2026-11-11T17:11:28.849414+00:00",
       "url": "https://youtube.com/shorts/m9UtMb3wkXQ",
-      "views": 1442,
-      "likes": 7,
+      "views": 1467,
+      "likes": 9,
       "comments": 0,
       "avg_view_pct": null,
       "avg_view_s": null,
@@ -27,7 +27,7 @@
       "published": "2026-11-11T23:00:00Z",
       "url": "https://youtube.com/shorts/OE9R8hx8OAY",
       "views": 1381,
-      "likes": 7,
+      "likes": 8,
       "comments": 0,
       "avg_view_pct": null,
       "avg_view_s": null,
@@ -40,8 +40,8 @@
       "title": "Bigger every bounce... until there is no room left #shorts",
       "published": "2026-11-12T15:00:00Z",
       "url": "https://youtube.com/shorts/LNpBK0HksDk",
-      "views": 63,
-      "likes": 1,
+      "views": 1324,
+      "likes": 10,
       "comments": 0,
       "avg_view_pct": null,
       "avg_view_s": null,
@@ -54,8 +54,8 @@
       "title": "Can the ball escape 10 spinning rings? #shorts",
       "published": "2026-11-12T23:00:00Z",
       "url": "https://youtube.com/shorts/17BMFcu3VIE",
-      "views": 0,
-      "likes": 0,
+      "views": 1118,
+      "likes": 9,
       "comments": 0,
       "avg_view_pct": null,
       "avg_view_s": null,
@@ -68,9 +68,9 @@
       "title": "The ball grows every bounce - guess the final count #shorts",
       "published": "2026-11-13T15:00:00Z",
       "url": "https://youtube.com/shorts/9ZQ1Qkmk5dY",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
+      "views": 996,
+      "likes": 19,
+      "comments": 1,
       "avg_view_pct": null,
       "avg_view_s": null,
       "subs_gained": null
@@ -102,23 +102,51 @@
       "avg_view_pct": null,
       "avg_view_s": null,
       "subs_gained": null
+    },
+    {
+      "id": "QQNj1u6cFCQ",
+      "seed": 10,
+      "format": "ball_grow",
+      "title": "How many bounces until it fills the circle? #shorts",
+      "published": "2026-11-14T23:00:00Z",
+      "url": "https://youtube.com/shorts/QQNj1u6cFCQ",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "avg_view_pct": null,
+      "avg_view_s": null,
+      "subs_gained": null
+    },
+    {
+      "id": "W9w9GRUPKAQ",
+      "seed": 11,
+      "format": "plinko",
+      "title": "Watch the pile grow into a bell curve #shorts",
+      "published": "2026-11-15T15:00:00Z",
+      "url": "https://youtube.com/shorts/W9w9GRUPKAQ",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "avg_view_pct": null,
+      "avg_view_s": null,
+      "subs_gained": null
     }
   ],
   "by_format": {
     "ring_escape": {
       "videos": 4,
-      "views": 2823,
+      "views": 3966,
       "avg_view_pct": null,
       "subs_gained": 0
     },
     "ball_grow": {
-      "videos": 2,
-      "views": 63,
+      "videos": 3,
+      "views": 2320,
       "avg_view_pct": null,
       "subs_gained": 0
     },
     "plinko": {
-      "videos": 1,
+      "videos": 2,
       "views": 0,
       "avg_view_pct": null,
       "subs_gained": 0
