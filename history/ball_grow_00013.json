@@ -1,0 +1,55 @@
+{
+  "format": "ball_grow",
+  "seed": 13,
+  "title": "How many bounces until it fills the circle? #shorts",
+  "description": "Every bounce plays a note and makes the ball bigger. It ends when there is no room left.\nA new simulation every day.\n\n#shorts #satisfying #simulation #bouncingball #physics",
+  "tags": [
+    "satisfying",
+    "simulation",
+    "bouncing ball",
+    "physics",
+    "asmr",
+    "shorts"
+  ],
+  "hook": "GUESS THE FINAL COUNT",
+  "duration": 28.42,
+  "finish_t": 26.6,
+  "bounces": 67,
+  "params": {
+    "seed": 13,
+    "attempt": 0,
+    "n_rings": 1,
+    "radii": [
+      440.0
+    ],
+    "gaps": [
+      0.0
+    ],
+    "omegas": [
+      0.0
+    ],
+    "phases": [
+      0.0
+    ],
+    "thickness": 10.0,
+    "gravity": 1400.0,
+    "ball_r": 18.0,
+    "v0": [
+      465.1779796911434,
+      -183.32879536632043
+    ],
+    "speedup": 1.01,
+    "vmax": 1500.0,
+    "hue0": 0.5860465594013983,
+    "hue_span": 0.0,
+    "fmt": "ball_grow",
+    "growth": 6.25632075002561
+  },
+  "uploaded": {
+    "id": "hEX90ZPehKU",
+    "url": "https://youtube.com/shorts/hEX90ZPehKU",
+    "at": "2026-11-14T17:34:06.754882+00:00",
+    "privacy": "private",
+    "publish_at": "2026-11-16T15:00:00Z"
+  }
+}
