@@ -1,0 +1,35 @@
+{
+  "format": "plinko",
+  "seed": 14,
+  "title": "Watch the pile grow into a bell curve #shorts",
+  "description": "Balls fall through a field of pegs and pile up. Which slot wins? It always ends as a bell curve.\nA new simulation every day.\n\n#shorts #satisfying #simulation #bouncingball #physics",
+  "tags": [
+    "satisfying",
+    "simulation",
+    "bouncing ball",
+    "physics",
+    "asmr",
+    "shorts"
+  ],
+  "hook": "WHERE WILL 90 BALLS LAND?",
+  "duration": 19.77,
+  "finish_t": 16.77,
+  "bounces": 5574,
+  "params": {
+    "seed": 14,
+    "attempt": 0,
+    "rows": 8,
+    "n_balls": 90,
+    "hue0": 0.010590391983196334,
+    "hue_span": -0.35,
+    "bounce_jitter": 0.0868720883544179,
+    "fmt": "plinko"
+  },
+  "uploaded": {
+    "id": "Sb4kHsTEjZo",
+    "url": "https://youtube.com/shorts/Sb4kHsTEjZo",
+    "at": "2026-11-15T18:20:58.633578+00:00",
+    "privacy": "private",
+    "publish_at": "2026-11-16T23:00:00Z"
+  }
+}

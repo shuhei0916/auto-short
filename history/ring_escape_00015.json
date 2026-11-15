@@ -1,0 +1,79 @@
+{
+  "format": "ring_escape",
+  "seed": 15,
+  "title": "Can the ball escape 7 spinning rings? #shorts",
+  "description": "Every bounce plays a note. Every gap it finds destroys a ring.\nA new simulation every day.\n\n#shorts #satisfying #simulation #bouncingball #physics",
+  "tags": [
+    "satisfying",
+    "simulation",
+    "bouncing ball",
+    "physics",
+    "asmr",
+    "shorts"
+  ],
+  "hook": "7 RINGS. ONE BALL.",
+  "duration": 30.22,
+  "finish_t": 28.39,
+  "bounces": 48,
+  "params": {
+    "seed": 15,
+    "attempt": 25,
+    "n_rings": 7,
+    "radii": [
+      120.0,
+      181.66666666666666,
+      243.33333333333331,
+      305.0,
+      366.66666666666663,
+      428.3333333333333,
+      490.0
+    ],
+    "gaps": [
+      0.7371065414373106,
+      0.6508817055230308,
+      0.5962441864146235,
+      0.5571789330348154,
+      0.5272337583955901,
+      0.503210943493559,
+      0.48331003793924593
+    ],
+    "omegas": [
+      1.439457769054739,
+      -1.0788625954773345,
+      0.9804295692084075,
+      -1.3816077991077704,
+      1.0298061732183987,
+      -1.322710590386768,
+      1.147520341845795
+    ],
+    "phases": [
+      0.9306088020733467,
+      3.534360014928717,
+      0.6433075941205708,
+      3.8777960262298437,
+      5.694762624514269,
+      4.860521177408754,
+      5.890960557694211
+    ],
+    "thickness": 9.0,
+    "gravity": 1400.0,
+    "ball_r": 16.0,
+    "v0": [
+      417.3765959377525,
+      -275.3121449617036
+    ],
+    "speedup": 1.012,
+    "vmax": 1500.0,
+    "hue0": 0.33807775725669986,
+    "hue_span": 0.6,
+    "fmt": "ring_escape",
+    "growth": 0.0
+  },
+  "uploaded": {
+    "id": "4Ybl4hWIS6o",
+    "url": "https://youtube.com/shorts/4Ybl4hWIS6o",
+    "at": "2026-11-15T18:21:51.495912+00:00",
+    "privacy": "private",
+    "publish_at": "2026-11-17T15:00:00Z"
+  }
+}
