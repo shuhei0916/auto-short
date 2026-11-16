@@ -68,6 +68,10 @@ def _particles(sim: Sim) -> list[dict]:
 
 
 def render_video(sim, audio: Path, out: Path, hook: str) -> None:
+    if sim.params.fmt == "split":
+        from .render_split import render_split
+
+        return render_split(sim, audio, out, hook)
     if sim.params.fmt == "plinko":
         from .render_plinko import render_plinko
 
