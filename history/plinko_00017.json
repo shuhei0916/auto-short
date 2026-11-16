@@ -1,0 +1,35 @@
+{
+  "format": "plinko",
+  "seed": 17,
+  "title": "130 balls, one peg board - which slot wins? #shorts",
+  "description": "Balls fall through a field of pegs and pile up. Which slot wins? It always ends as a bell curve.\nA new simulation every day.\n\n#shorts #satisfying #simulation #bouncingball #physics",
+  "tags": [
+    "satisfying",
+    "simulation",
+    "bouncing ball",
+    "physics",
+    "asmr",
+    "shorts"
+  ],
+  "hook": "WHICH SLOT WINS?",
+  "duration": 23.32,
+  "finish_t": 20.32,
+  "bounces": 9112,
+  "params": {
+    "seed": 17,
+    "attempt": 0,
+    "rows": 10,
+    "n_balls": 130,
+    "hue0": 0.26765098119391595,
+    "hue_span": 0.45,
+    "bounce_jitter": 0.07652009971748816,
+    "fmt": "plinko"
+  },
+  "uploaded": {
+    "id": "2f5HRLgttpk",
+    "url": "https://youtube.com/shorts/2f5HRLgttpk",
+    "at": "2026-11-16T21:30:59.807175+00:00",
+    "privacy": "private",
+    "publish_at": "2026-11-18T15:00:00Z"
+  }
+}
