@@ -1,0 +1,55 @@
+{
+  "format": "ball_grow",
+  "seed": 19,
+  "title": "Bigger every bounce... until there is no room left #shorts",
+  "description": "Every bounce plays a note and makes the ball bigger. It ends when there is no room left.\nA new simulation every day.\n\n#shorts #satisfying #simulation #bouncingball #physics",
+  "tags": [
+    "satisfying",
+    "simulation",
+    "bouncing ball",
+    "physics",
+    "asmr",
+    "shorts"
+  ],
+  "hook": "IT GROWS EVERY BOUNCE",
+  "duration": 25.43,
+  "finish_t": 23.6,
+  "bounces": 73,
+  "params": {
+    "seed": 19,
+    "attempt": 0,
+    "n_rings": 1,
+    "radii": [
+      440.0
+    ],
+    "gaps": [
+      0.0
+    ],
+    "omegas": [
+      0.0
+    ],
+    "phases": [
+      0.0
+    ],
+    "thickness": 10.0,
+    "gravity": 2200.0,
+    "ball_r": 18.0,
+    "v0": [
+      496.46021647393377,
+      59.39068494852393
+    ],
+    "speedup": 1.01,
+    "vmax": 1500.0,
+    "hue0": 0.5196506892614274,
+    "hue_span": 0.0,
+    "fmt": "ball_grow",
+    "growth": 5.763862497528923
+  },
+  "uploaded": {
+    "id": "ITuljnmBZes",
+    "url": "https://youtube.com/shorts/ITuljnmBZes",
+    "at": "2026-11-17T20:21:13.036140+00:00",
+    "privacy": "private",
+    "publish_at": "2026-11-19T15:00:00Z"
+  }
+}

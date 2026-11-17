@@ -1,0 +1,79 @@
+{
+  "format": "ring_escape",
+  "seed": 18,
+  "title": "Can the ball escape 7 spinning rings? #shorts",
+  "description": "Every bounce plays a note. Every gap it finds destroys a ring.\nA new simulation every day.\n\n#shorts #satisfying #simulation #bouncingball #physics",
+  "tags": [
+    "satisfying",
+    "simulation",
+    "bouncing ball",
+    "physics",
+    "asmr",
+    "shorts"
+  ],
+  "hook": "7 RINGS. ONE BALL.",
+  "duration": 28.08,
+  "finish_t": 26.27,
+  "bounces": 48,
+  "params": {
+    "seed": 18,
+    "attempt": 17,
+    "n_rings": 7,
+    "radii": [
+      120.0,
+      181.66666666666666,
+      243.33333333333331,
+      305.0,
+      366.66666666666663,
+      428.3333333333333,
+      490.0
+    ],
+    "gaps": [
+      0.7759089757347059,
+      0.6851451304068837,
+      0.6276314073493938,
+      0.5865096982981635,
+      0.5549881631111173,
+      0.5297007498851357,
+      0.5087522297231376
+    ],
+    "omegas": [
+      0.8526745544896197,
+      -0.9785119906108711,
+      0.9804624346909151,
+      -0.9743072208459984,
+      0.9650535907174969,
+      -0.8814135809334773,
+      0.8767830307675729
+    ],
+    "phases": [
+      3.842771226639224,
+      5.932167737945564,
+      4.833682149737449,
+      5.509941401205248,
+      3.2170183877759095,
+      1.96571754954233,
+      4.43864492822047
+    ],
+    "thickness": 9.0,
+    "gravity": 2200.0,
+    "ball_r": 16.0,
+    "v0": [
+      -499.6190020756797,
+      19.51544939021248
+    ],
+    "speedup": 1.012,
+    "vmax": 1500.0,
+    "hue0": 0.11799998078076646,
+    "hue_span": 0.4,
+    "fmt": "ring_escape",
+    "growth": 0.0
+  },
+  "uploaded": {
+    "id": "WIRreBhogGA",
+    "url": "https://youtube.com/shorts/WIRreBhogGA",
+    "at": "2026-11-17T20:20:08.603606+00:00",
+    "privacy": "private",
+    "publish_at": "2026-11-18T23:00:00Z"
+  }
+}
