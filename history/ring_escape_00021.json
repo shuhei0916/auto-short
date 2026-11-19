@@ -1,0 +1,73 @@
+{
+  "format": "ring_escape",
+  "seed": 21,
+  "title": "The last ring is the hardest... (7 rings) #shorts",
+  "description": "Every bounce plays a note. Every gap it finds destroys a ring.\nA new simulation every day.\n\n#shorts #satisfying #simulation #bouncingball #physics",
+  "tags": [
+    "satisfying",
+    "simulation",
+    "bouncing ball",
+    "physics",
+    "asmr",
+    "shorts"
+  ],
+  "hook": "7 RINGS. ONE BALL.",
+  "duration": 24.65,
+  "finish_t": 22.83,
+  "bounces": 30,
+  "params": {
+    "seed": 21,
+    "attempt": 4,
+    "n_rings": 7,
+    "radii": [
+      120.0,
+      181.66666666666666,
+      243.33333333333331,
+      305.0,
+      366.66666666666663,
+      428.3333333333333,
+      490.0
+    ],
+    "gaps": [
+      0.8789455964743742,
+      0.7761287910695516,
+      0.7109775488502431,
+      0.6643950936648848,
+      0.6286876648127672,
+      0.6000422164466642,
+      0.5763118432651864
+    ],
+    "omegas": [
+      -0.9489966061476572,
+      0.8383713037087789,
+      -1.0808343093498194,
+      1.0872345766062335,
+      -0.963022400508215,
+      0.9599225058844029,
+      -0.8467987874635348
+    ],
+    "phases": [
+      0.487264922571301,
+      4.790641938215008,
+      5.0345472797301305,
+      0.8552143296515357,
+      5.544962983803441,
+      5.468588537652556,
+      1.5005390558828122
+    ],
+    "thickness": 9.0,
+    "gravity": 1400.0,
+    "ball_r": 16.0,
+    "v0": [
+      198.2747398373442,
+      -459.00667483429197
+    ],
+    "speedup": 1.012,
+    "vmax": 1500.0,
+    "hue0": 0.014121348940183798,
+    "hue_span": -0.3,
+    "fmt": "ring_escape",
+    "growth": 0.0
+  },
+  "uploaded": null
+}
