@@ -1,0 +1,29 @@
+{
+  "format": "plinko",
+  "seed": 23,
+  "title": "Where will 130 balls land? Guess the shape #shorts",
+  "description": "Balls fall through a field of pegs and pile up. Which slot wins? It always ends as a bell curve.\nA new simulation every day.\n\n#shorts #satisfying #simulation #bouncingball #physics",
+  "tags": [
+    "satisfying",
+    "simulation",
+    "bouncing ball",
+    "physics",
+    "asmr",
+    "shorts"
+  ],
+  "hook": "GUESS THE SHAPE",
+  "duration": 20.72,
+  "finish_t": 17.72,
+  "bounces": 5565,
+  "params": {
+    "seed": 23,
+    "attempt": 0,
+    "rows": 8,
+    "n_balls": 130,
+    "hue0": 0.37162583947085914,
+    "hue_span": -0.35,
+    "bounce_jitter": 0.09560371963860517,
+    "fmt": "plinko"
+  },
+  "uploaded": null
+}
