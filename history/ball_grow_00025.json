@@ -1,0 +1,55 @@
+{
+  "format": "ball_grow",
+  "seed": 25,
+  "title": "The ball grows every bounce - guess the final count #shorts",
+  "description": "Every bounce plays a note and makes the ball bigger. It ends when there is no room left.\nA new simulation every day.\n\n#shorts #satisfying #simulation #bouncingball #physics",
+  "tags": [
+    "satisfying",
+    "simulation",
+    "bouncing ball",
+    "physics",
+    "asmr",
+    "shorts"
+  ],
+  "hook": "BIGGER EVERY BOUNCE...",
+  "duration": 19.82,
+  "finish_t": 17.99,
+  "bounces": 50,
+  "params": {
+    "seed": 25,
+    "attempt": 0,
+    "n_rings": 1,
+    "radii": [
+      440.0
+    ],
+    "gaps": [
+      0.0
+    ],
+    "omegas": [
+      0.0
+    ],
+    "phases": [
+      0.0
+    ],
+    "thickness": 10.0,
+    "gravity": 1800.0,
+    "ball_r": 18.0,
+    "v0": [
+      285.5518221051597,
+      -410.4389807175035
+    ],
+    "speedup": 1.01,
+    "vmax": 1500.0,
+    "hue0": 0.9362564568492632,
+    "hue_span": 0.0,
+    "fmt": "ball_grow",
+    "growth": 8.360174575110566
+  },
+  "uploaded": {
+    "id": "pR9XIFW3IlA",
+    "url": "https://youtube.com/shorts/pR9XIFW3IlA",
+    "at": "2026-11-23T09:20:26.732458+00:00",
+    "privacy": "private",
+    "publish_at": "2026-11-23T15:00:00Z"
+  }
+}
