@@ -118,6 +118,12 @@ def main() -> None:
     sub.add_parser("analytics", help="write analytics/latest.json from YouTube stats")
     sub.add_parser("auth", help="redo the YouTube sign-in and refresh secrets/token.json")
 
+    wk = sub.add_parser("weekly", help="write the weekly report email (HTML + text)")
+    wk.add_argument("--notes", type=Path, help="JSON with conclusion/done/next lists and branch")
+    wk.add_argument("--out", type=Path, default=Path("out/weekly"))
+    wk.add_argument("--today", help="YYYY-MM-DD (default: today UTC)")
+    wk.add_argument("--repo", default="shuhei0916/auto-short")
+
     a = ap.parse_args()
     if a.cmd == "make":
         make(a.seed, a.out, a.format)
@@ -145,6 +151,14 @@ def main() -> None:
         from .analytics import collect
 
         collect()
+    elif a.cmd == "weekly":
+        from datetime import datetime, timezone
+
+        from .weekly import run
+
+        today = a.today or datetime.now(timezone.utc).date().isoformat()
+        for p in run(a.notes, a.out, today, a.repo):
+            print(p)
     elif a.cmd == "upload":
         from .upload import upload
 
