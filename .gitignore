@@ -4,3 +4,4 @@ out/
 secrets/
 *.ffmpeg.log
 logs/
+branding/banner_safe_area_preview.png

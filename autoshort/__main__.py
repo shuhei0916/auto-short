@@ -116,6 +116,7 @@ def main() -> None:
     d.add_argument("--no-upload", action="store_true")
 
     sub.add_parser("analytics", help="write analytics/latest.json from YouTube stats")
+    sub.add_parser("auth", help="redo the YouTube sign-in and refresh secrets/token.json")
 
     a = ap.parse_args()
     if a.cmd == "make":
@@ -136,6 +137,10 @@ def main() -> None:
                 from .upload import upload
 
                 upload(video, publish_at=to_rfc3339(slot))
+    elif a.cmd == "auth":
+        from .upload import reauthenticate
+
+        reauthenticate()
     elif a.cmd == "analytics":
         from .analytics import collect
 

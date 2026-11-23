@@ -52,6 +52,18 @@ def _credentials():
     return creds
 
 
+def reauthenticate() -> None:
+    """Forces a fresh browser sign-in, then shows where the new token went."""
+    if os.environ.get("YT_TOKEN_JSON"):
+        raise SystemExit("Unset YT_TOKEN_JSON first; auth only works with the local token file.")
+    token = SECRETS / "token.json"
+    token.unlink(missing_ok=True)
+    channel = _service().channels().list(part="snippet", mine=True).execute()["items"][0]
+    print(f"Signed in. Channel: {channel['snippet'].get('customUrl')}")
+    print(f"New token saved to {token.resolve()}")
+    print("Copy its contents into the GitHub secret YT_TOKEN_JSON.")
+
+
 def _service():
     from googleapiclient.discovery import build
 
