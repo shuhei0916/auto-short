@@ -1,0 +1,30 @@
+{
+  "format": "swarm",
+  "seed": 90001,
+  "title": "1 ball becomes 100... watch the ring fill up #shorts",
+  "description": "One ball splits into more on every bounce. It ends when the ring is packed.\nA new simulation every day.\n\n#shorts #satisfying #simulation #bouncingball #physics",
+  "tags": [
+    "satisfying",
+    "simulation",
+    "bouncing ball",
+    "physics",
+    "asmr",
+    "shorts"
+  ],
+  "hook": "WATCH IT TURN INTO 100",
+  "duration": 20.57,
+  "finish_t": 18.05,
+  "bounces": 503,
+  "params": {
+    "seed": 90001,
+    "attempt": 2,
+    "target": 100,
+    "split_p": 0.19749711469297493,
+    "gravity": 1200.0,
+    "hue0": 0.16824856015921041,
+    "hue_span": -0.3,
+    "wall": 430.0,
+    "fmt": "swarm"
+  },
+  "uploaded": null
+}

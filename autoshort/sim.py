@@ -14,7 +14,7 @@ CX, CY = 540.0, 930.0
 FPS = 60
 SUBSTEPS = 8
 TAU = math.tau
-FORMATS = ("ring_escape", "ball_grow", "plinko")
+FORMATS = ("ring_escape", "ball_grow", "plinko", "swarm")
 
 
 @dataclass
@@ -57,6 +57,10 @@ class Sim:
 
 
 def make_params(seed: int, attempt: int = 0, fmt: str = "ring_escape"):
+    if fmt == "swarm":
+        from .swarm import make_params as swarm_params
+
+        return swarm_params(seed, attempt)
     if fmt == "plinko":
         from .plinko import make_params as plinko_params
 
@@ -185,6 +189,10 @@ def _simulate_grow(p: Params, max_seconds: float, tail: float) -> Sim | None:
 
 
 def simulate(p, max_seconds: float = 40.0, tail: float = 1.8):
+    if p.fmt == "swarm":
+        from .swarm import simulate as swarm_simulate
+
+        return swarm_simulate(p, max_seconds)
     if p.fmt == "plinko":
         from .plinko import simulate as plinko_simulate
 
@@ -261,6 +269,10 @@ def simulate(p, max_seconds: float = 40.0, tail: float = 1.8):
 
 def quality_ok(sim) -> tuple[bool, str]:
     """Reject runs that would make a boring Short."""
+    if sim.params.fmt == "swarm":
+        from .swarm import quality_ok as swarm_ok
+
+        return swarm_ok(sim)
     if sim.params.fmt == "plinko":
         from .plinko import quality_ok as plinko_ok
 

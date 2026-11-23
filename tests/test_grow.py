@@ -11,7 +11,7 @@ def sim():
 
 
 def test_formats_are_registered():
-    assert FORMATS == ("ring_escape", "ball_grow", "plinko")
+    assert FORMATS == ("ring_escape", "ball_grow", "plinko", "swarm")
 
 
 def test_grow_is_deterministic(sim):
