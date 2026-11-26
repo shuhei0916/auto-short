@@ -1,0 +1,55 @@
+{
+  "format": "ball_grow",
+  "seed": 34,
+  "title": "Bigger every bounce... until there is no room left #shorts",
+  "description": "Every bounce plays a note and makes the ball bigger. It ends when there is no room left.\nA new simulation every day.\n\n#shorts #satisfying #simulation #bouncingball #physics",
+  "tags": [
+    "satisfying",
+    "simulation",
+    "bouncing ball",
+    "physics",
+    "asmr",
+    "shorts"
+  ],
+  "hook": "GUESS THE FINAL COUNT",
+  "duration": 30.23,
+  "finish_t": 28.42,
+  "bounces": 69,
+  "params": {
+    "seed": 34,
+    "attempt": 0,
+    "n_rings": 1,
+    "radii": [
+      440.0
+    ],
+    "gaps": [
+      0.0
+    ],
+    "omegas": [
+      0.0
+    ],
+    "phases": [
+      0.0
+    ],
+    "thickness": 10.0,
+    "gravity": 1400.0,
+    "ball_r": 18.0,
+    "v0": [
+      -172.97794065674756,
+      -469.12539053663545
+    ],
+    "speedup": 1.01,
+    "vmax": 1500.0,
+    "hue0": 0.7384912435341668,
+    "hue_span": 0.0,
+    "fmt": "ball_grow",
+    "growth": 6.064785176764503
+  },
+  "uploaded": {
+    "id": "lsZQagKnTs0",
+    "url": "https://youtube.com/shorts/lsZQagKnTs0",
+    "at": "2026-11-26T20:49:44.993234+00:00",
+    "privacy": "private",
+    "publish_at": "2026-11-27T23:00:00Z"
+  }
+}
