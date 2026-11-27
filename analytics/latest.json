@@ -1,8 +1,8 @@
 {
-  "generated": "2026-11-26",
+  "generated": "2026-11-27",
   "channel": {
-    "subscribers": 73,
-    "views": 78174
+    "subscribers": 76,
+    "views": 83393
   },
   "videos": [
     {
@@ -141,7 +141,7 @@
       "views": 1362,
       "likes": 11,
       "comments": 0,
-      "avg_view_pct": 83.9,
+      "avg_view_pct": 84.0,
       "avg_view_s": 23.0,
       "subs_gained": 1
     },
@@ -169,7 +169,7 @@
       "views": 1171,
       "likes": 8,
       "comments": 0,
-      "avg_view_pct": 78.0,
+      "avg_view_pct": 77.8,
       "avg_view_s": 15.0,
       "subs_gained": 0
     },
@@ -183,7 +183,7 @@
       "views": 1342,
       "likes": 10,
       "comments": 1,
-      "avg_view_pct": 66.8,
+      "avg_view_pct": 66.9,
       "avg_view_s": 20.0,
       "subs_gained": 0
     },
@@ -194,7 +194,7 @@
       "title": "How many bounces until it fills the circle? #shorts",
       "published": "2026-11-17T23:00:00Z",
       "url": "https://youtube.com/shorts/6Qmq-C3t1MQ",
-      "views": 3237,
+      "views": 3239,
       "likes": 38,
       "comments": 2,
       "avg_view_pct": 96.0,
@@ -222,10 +222,10 @@
       "title": "Can the ball escape 7 spinning rings? #shorts",
       "published": "2026-11-18T23:00:00Z",
       "url": "https://youtube.com/shorts/WIRreBhogGA",
-      "views": 23494,
-      "likes": 299,
+      "views": 23500,
+      "likes": 300,
       "comments": 0,
-      "avg_view_pct": 83.7,
+      "avg_view_pct": 83.6,
       "avg_view_s": 24.0,
       "subs_gained": 40
     },
@@ -250,12 +250,12 @@
       "title": "The ball grows every bounce - guess the final count #shorts",
       "published": "2026-11-23T15:00:00Z",
       "url": "https://youtube.com/shorts/pR9XIFW3IlA",
-      "views": 7575,
-      "likes": 91,
+      "views": 7789,
+      "likes": 92,
       "comments": 0,
-      "avg_view_pct": 111.9,
+      "avg_view_pct": 111.8,
       "avg_view_s": 22.0,
-      "subs_gained": 17
+      "subs_gained": 18
     },
     {
       "id": "S8XrF5mrHuk",
@@ -264,10 +264,10 @@
       "title": "Watch the pile grow into a bell curve #shorts",
       "published": "2026-11-23T23:00:00Z",
       "url": "https://youtube.com/shorts/S8XrF5mrHuk",
-      "views": 1354,
-      "likes": 10,
+      "views": 1402,
+      "likes": 11,
       "comments": 0,
-      "avg_view_pct": 64.2,
+      "avg_view_pct": 64.3,
       "avg_view_s": 17.0,
       "subs_gained": 2
     },
@@ -278,10 +278,10 @@
       "title": "Guess how long until it escapes (9 rings) #shorts",
       "published": "2026-11-24T15:00:00Z",
       "url": "https://youtube.com/shorts/jcRjqdkD-Cs",
-      "views": 1230,
-      "likes": 7,
+      "views": 1240,
+      "likes": 8,
       "comments": 0,
-      "avg_view_pct": 67.6,
+      "avg_view_pct": 67.8,
       "avg_view_s": 16.0,
       "subs_gained": 4
     },
@@ -292,10 +292,10 @@
       "title": "Bigger every bounce... until there is no room left #shorts",
       "published": "2026-11-24T23:00:00Z",
       "url": "https://youtube.com/shorts/Q0w48kpd2ZM",
-      "views": 1453,
-      "likes": 18,
+      "views": 1611,
+      "likes": 23,
       "comments": 0,
-      "avg_view_pct": 102.2,
+      "avg_view_pct": 101.0,
       "avg_view_s": 22.0,
       "subs_gained": 2
     },
@@ -306,12 +306,12 @@
       "title": "130 balls, one peg board - which slot wins? #shorts",
       "published": "2026-11-25T15:00:00Z",
       "url": "https://youtube.com/shorts/UNH1eUVqF0Q",
-      "views": 1250,
+      "views": 1357,
       "likes": 6,
       "comments": 0,
-      "avg_view_pct": null,
-      "avg_view_s": null,
-      "subs_gained": null
+      "avg_view_pct": 73.4,
+      "avg_view_s": 15.0,
+      "subs_gained": 1
     },
     {
       "id": "gEpAmIM73dI",
@@ -320,12 +320,12 @@
       "title": "Guess how long until it escapes (10 rings) #shorts",
       "published": "2026-11-25T23:00:00Z",
       "url": "https://youtube.com/shorts/gEpAmIM73dI",
-      "views": 1120,
-      "likes": 11,
+      "views": 1236,
+      "likes": 12,
       "comments": 2,
-      "avg_view_pct": null,
-      "avg_view_s": null,
-      "subs_gained": null
+      "avg_view_pct": 69.6,
+      "avg_view_s": 19.0,
+      "subs_gained": 3
     },
     {
       "id": "ymXaoGSh38Y",
@@ -334,9 +334,9 @@
       "title": "How many bounces until it fills the circle? #shorts",
       "published": "2026-11-26T15:00:00Z",
       "url": "https://youtube.com/shorts/ymXaoGSh38Y",
-      "views": 1203,
-      "likes": 14,
-      "comments": 1,
+      "views": 1417,
+      "likes": 15,
+      "comments": 3,
       "avg_view_pct": null,
       "avg_view_s": null,
       "subs_gained": null
@@ -348,8 +348,8 @@
       "title": "Where will 90 balls land? Guess the shape #shorts",
       "published": "2026-11-26T23:00:00Z",
       "url": "https://youtube.com/shorts/4Jrs0p6j5KA",
-      "views": 0,
-      "likes": 0,
+      "views": 1505,
+      "likes": 13,
       "comments": 0,
       "avg_view_pct": null,
       "avg_view_s": null,
@@ -362,8 +362,8 @@
       "title": "10 rings vs 1 ball - how long does it take? #shorts",
       "published": "2026-11-27T15:00:00Z",
       "url": "https://youtube.com/shorts/BiG7fZO5ASY",
-      "views": 0,
-      "likes": 0,
+      "views": 1617,
+      "likes": 15,
       "comments": 0,
       "avg_view_pct": null,
       "avg_view_s": null,
@@ -382,26 +382,54 @@
       "avg_view_pct": null,
       "avg_view_s": null,
       "subs_gained": null
+    },
+    {
+      "id": "YBUau9FeBv4",
+      "seed": 35,
+      "format": "plinko",
+      "title": "Where will 130 balls land? Guess the shape #shorts",
+      "published": "2026-11-28T15:00:00Z",
+      "url": "https://youtube.com/shorts/YBUau9FeBv4",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "avg_view_pct": null,
+      "avg_view_s": null,
+      "subs_gained": null
+    },
+    {
+      "id": "jVP9bb0XB1o",
+      "seed": 36,
+      "format": "ring_escape",
+      "title": "Can the ball escape 8 spinning rings? #shorts",
+      "published": "2026-11-28T23:00:00Z",
+      "url": "https://youtube.com/shorts/jVP9bb0XB1o",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "avg_view_pct": null,
+      "avg_view_s": null,
+      "subs_gained": null
     }
   ],
   "by_format": {
     "ring_escape": {
-      "videos": 10,
-      "views": 34448,
-      "avg_view_pct": 84.9,
-      "subs_gained": 47
+      "videos": 11,
+      "views": 36197,
+      "avg_view_pct": 84.3,
+      "subs_gained": 50
     },
     "ball_grow": {
       "videos": 10,
-      "views": 39416,
+      "views": 40004,
       "avg_view_pct": 96.1,
-      "subs_gained": 50
+      "subs_gained": 51
     },
     "plinko": {
-      "videos": 7,
-      "views": 7473,
-      "avg_view_pct": 84.2,
-      "subs_gained": 4
+      "videos": 8,
+      "views": 9133,
+      "avg_view_pct": 82.2,
+      "subs_gained": 5
     }
   }
 }
